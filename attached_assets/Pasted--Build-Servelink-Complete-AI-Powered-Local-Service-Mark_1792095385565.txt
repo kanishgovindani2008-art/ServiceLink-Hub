@@ -1,0 +1,527 @@
+# Build Servelink — Complete AI-Powered Local Service Marketplace
+
+Build a complete, modern, responsive website named **Servelink**.
+
+**Brand name:** Servelink  
+**Tagline:** Your Local Service. One Platform.  
+**Purpose:** Connect customers with nearby service professionals and help customers find the right expert through AI-assisted problem understanding, photo uploads, smart search, and professional recommendations.
+
+This is a college startup competition project. Build a polished, interactive MVP that looks like a real commercial product.
+
+IMPORTANT: If an existing Servelink project is available, inspect and update it without deleting working features. If this is a new project, build the website from scratch. Do not create a separate project unnecessarily.
+
+## 1. Official Logo and Branding
+
+Use my uploaded logo image as the official Servelink logo.
+
+The logo contains a blue house, a blue and green interlocking chain, and a dark-blue lower element.
+
+- Use the exact uploaded logo without redesigning it.
+- Preserve its original colors and proportions.
+- If the image is available in the project, reuse it. Otherwise, add it to the public assets folder as `servelink-logo.png`.
+- Display the logo beside the wordmark **Servelink**.
+- Style "Serve" in dark navy and "link" in bright blue.
+- Add the tagline "Your Local Service. One Platform."
+- Make the logo clickable and return users to the homepage.
+
+Use the logo consistently on the homepage, header, footer, login screens, dashboards, search results, booking pages, AI assistant, and loading screen.
+
+The brand name must always be spelled **Servelink**, never ServerLink or Server Link.
+
+## 2. Website Design
+
+Use a clean, professional, modern design inspired by my uploaded website screenshot.
+
+Color palette:
+- Bright blue for primary buttons.
+- Dark navy for headings.
+- White and light blue for backgrounds.
+- Green for availability and successful booking indicators.
+- Light gray for secondary elements.
+
+Use rounded cards, subtle shadows, clear icons, attractive professional photos, consistent spacing, and readable typography.
+
+The website must work properly on desktop, tablet, and mobile.
+
+Desktop layout:
+- Header at the top.
+- Service categories near the top of the homepage.
+- Filters on the left side of the search page.
+- Professional cards arranged in a responsive grid.
+
+Mobile layout:
+- Compact header.
+- Scrollable service categories.
+- Stacked professional cards.
+- Mobile-friendly filters.
+- Bottom navigation.
+
+## 3. Homepage
+
+Create a homepage with the following sections.
+
+### Header
+- Servelink logo and wordmark.
+- Tagline.
+- Home.
+- Search.
+- My Bookings.
+- Profile.
+- Notification icon where supported.
+- Customer/Professional demo view switcher.
+
+Do not include Messages in the primary navigation unless needed for a separate existing feature.
+
+### Greeting and location
+Display:
+"Good Morning, User!"
+
+Show a location selector:
+"Near Bhopal"
+
+Bhopal is the default demo location, not a hardcoded restriction. Allow users to select their location or service area.
+
+### Search bar
+Placeholder:
+"Search for a service or professional..."
+
+Support searching by professional name, category, location, appliance brand, vehicle type, vehicle technology, and problem description.
+
+### AI feature
+Add a prominent section:
+
+"Not sure which service you need?"
+
+Subtitle:
+"Describe your problem or upload a photo to find the right professional."
+
+Button:
+"AI Help Me"
+
+### Nine service categories
+
+Display all nine categories with recognizable icons:
+
+1. Electricians
+2. Plumbers
+3. Painters
+4. Carpenters
+5. Mechanics
+6. AC Repair
+7. TV Repair
+8. Refrigerator Repair
+9. Washing Machine Repair
+
+Each category must be clickable and show matching professionals. Add a View All option.
+
+### Recommended professionals
+Display cards with photos, names, ratings, reviews, experience, distance, completed jobs, availability, starting price, and specializations.
+
+## 4. AI Service Assistant
+
+Build an AI Service Assistant that helps customers identify the right type of professional.
+
+The assistant should contain:
+- Text box for describing a problem.
+- Optional photo upload.
+- Location selector.
+- Optional budget.
+- Optional urgency or preferred date.
+- "Find Best Professional" button.
+- Loading indicator.
+- Problem summary.
+- Suggested service category.
+- Matching professionals.
+- Explanation of why each professional is recommended.
+- Call and Book Now actions.
+
+Heading:
+"Tell us what's wrong. We'll help you find the right expert."
+
+Placeholder:
+"Describe your problem, e.g. My AC is running but not cooling the room..."
+
+### Example: AC cooling problem
+
+Customer writes:
+"My AC is running, but it is not cooling the room."
+
+The assistant should:
+- Suggest AC Repair.
+- Summarize the problem as an AC cooling issue.
+- Recommend nearby AC technicians.
+- Prioritize relevant cooling-system experience.
+- Match the brands the customer selects.
+- Explain why each professional is recommended.
+
+Do not claim to know the exact cause without an inspection.
+
+### Example: Washing machine problem
+
+Customer writes:
+"My washing machine makes noise and does not spin."
+
+Recommend suitable washing machine repair professionals.
+
+### Example: Electrical problem
+
+Customer writes:
+"My electrical socket is not working."
+
+Recommend an electrician. For potentially dangerous electrical issues, advise the customer not to touch exposed wiring and to seek qualified assistance.
+
+### Photo-based problem reporting
+
+Customers must be able to upload a photo of a damaged appliance, vehicle, or other item.
+
+- Photo upload is optional.
+- Text-only problem descriptions must work.
+- Display a preview of the uploaded image.
+- Allow customers to remove or replace the image.
+- Validate image type and file size.
+- Use vision-capable AI when correctly configured.
+- If AI is unavailable, provide a rule-based demo fallback.
+
+Never claim that a photo was analyzed by AI when it was not.
+
+### AI integration
+
+Use a server-side AI integration if an API key is configured in Replit Secrets as `OPENAI_API_KEY`.
+
+Use a suitable vision-capable model supported by the configured API account.
+
+Never expose API keys in frontend code or browser storage.
+
+If no API key exists, implement useful keyword-based demo matching for common problems. Clearly label demo results and explain that genuine AI analysis requires configuration.
+
+The website must remain usable without an API key.
+
+## 5. AI Professional Matching
+
+Recommend professionals according to:
+1. Service category match.
+2. Relevant technical specialization.
+3. Distance and service area.
+4. Availability.
+5. Relevant experience.
+6. Customer ratings and reviews.
+7. Starting price and budget.
+8. Appliance brand or vehicle expertise.
+
+Prioritize professionals whose skills match the customer's actual problem rather than relying on ratings alone.
+
+Show an explanation such as:
+"Recommended because this technician specializes in AC cooling issues, serves your area, and is available today."
+
+If no suitable professional is available, display an honest message and offer broader search options.
+
+## 6. Search and Sorting
+
+Keep a search page with a left-side filter panel on desktop and a convenient filter panel on mobile.
+
+Add a visible Sort By dropdown with:
+- Recommended for You.
+- Price: Low to High.
+- Price: High to Low.
+- Experience: High to Low.
+- Experience: Low to High.
+- Rating: High to Low.
+- Nearest First.
+- Most Jobs Completed.
+
+Implement actual sorting based on the professional data.
+
+Add working filters for:
+- Service category.
+- Location or neighborhood.
+- Minimum rating.
+- Availability.
+- Maximum starting price.
+- Minimum experience.
+- Verified status.
+- Distance.
+
+Add a Clear Filters button and result count.
+
+Sorting and filtering must update the displayed results immediately.
+
+Display a helpful empty state when no professionals match.
+
+## 7. Professional Cards and Required Buttons
+
+Every professional card should contain:
+- Profile photo.
+- Full name.
+- Verification status where genuinely verified.
+- Service category.
+- Rating and review count.
+- Location and distance.
+- Completed jobs.
+- Relevant experience.
+- Starting price.
+- Availability.
+- Specialization badges.
+- Supported brands or vehicle types when applicable.
+
+Use realistic sample data for the demo, but label sample profiles and reviews appropriately.
+
+### Mandatory buttons
+
+Every professional listing card must contain exactly these three main action buttons, in this order:
+
+**1. Previous Work**
+- Light-blue background.
+- Dark-blue text.
+- Opens that professional's portfolio.
+
+**2. Call**
+- Solid blue background.
+- White text.
+- Rounded corners.
+- Same height and visual emphasis as Book Now.
+- Uses the configured phone number through a `tel:` link on supported devices.
+
+**3. Book Now**
+- Solid blue background.
+- White text.
+- Rounded corners.
+- Opens the booking workflow for that professional.
+
+**Remove the Message button completely from all professional listing cards.**
+
+Search all card components, category-specific listings, recommended results, and duplicate layouts. No professional listing card may contain a Message button.
+
+Do not leave the old white or unfilled Message button.
+
+Do not replace Call with Message anywhere on professional cards.
+
+If a demo profile has no configured phone number, show that calling is unavailable for that demo profile. Never invent real phone numbers.
+
+## 8. Mechanics Filters
+
+For Mechanics, add the following filters.
+
+### Vehicle type
+- Car.
+- Bike.
+- Scooter.
+- Other vehicle.
+
+### Vehicle technology
+- Electric vehicle (EV).
+- Petrol.
+- Diesel.
+- CNG.
+- Hybrid.
+
+Allow multiple selections when appropriate.
+
+Additional filters:
+- Vehicle brand.
+- Model specialization.
+- Years of relevant experience.
+- Rating.
+- Starting price.
+- Availability.
+- Distance.
+
+Show badges such as:
+- EV Specialist.
+- Car Mechanic.
+- Bike & Scooter Expert.
+- Petrol and Diesel Vehicles.
+
+Only display specializations selected by the professional.
+
+Customers must be able to distinguish EV mechanics from petrol, diesel, and other vehicle specialists.
+
+Do not show vehicle filters for unrelated categories.
+
+## 9. Appliance Repair and Brand Expertise
+
+Allow AC Repair, TV Repair, Refrigerator Repair, and Washing Machine Repair professionals to list the brands they service.
+
+Create a profile field called "Brands I Service".
+
+Example options:
+
+**AC Repair:** Voltas, Daikin, LG, Samsung, Blue Star, Hitachi, Panasonic.
+
+**TV Repair:** Samsung, LG, Sony, Xiaomi, TCL.
+
+**Refrigerator Repair:** LG, Samsung, Whirlpool, Haier, Godrej, Panasonic.
+
+**Washing Machine Repair:** LG, Samsung, Whirlpool, IFB, Bosch, Haier.
+
+These are configurable example options. Do not assume every professional services every brand.
+
+Show relevant brand filters based on the selected service category. Prioritize professionals who list the selected brand.
+
+Display a "Brand Specialist" badge when the professional has declared relevant expertise.
+
+Only display "Authorized Service Partner" if manufacturer authorization has actually been verified.
+
+## 10. Previous Work Portfolio
+
+Each professional should have a Previous Work portfolio containing:
+- Completed project photos.
+- Before-and-after images where available.
+- Project title.
+- Service performed.
+- Short description.
+- Completion date.
+- Customer rating when available.
+
+Open images in a larger gallery or modal.
+
+Allow professionals to add, edit, and remove portfolio entries from their dashboard.
+
+Clearly distinguish sample portfolio images from verified real-world jobs.
+
+## 11. Booking System
+
+AI recommendations, search results, and professional profiles must all lead to the same Book Now workflow.
+
+When a customer selects Book Now:
+1. Show the selected professional.
+2. Preselect the service category.
+3. Ask for the problem description.
+4. Allow an optional problem photo.
+5. Ask for the service address.
+6. Allow date and available time selection.
+7. Display the starting price and estimated cost information.
+8. Allow the customer to submit the booking request.
+9. Display a booking confirmation screen.
+10. Save the booking under My Bookings.
+
+Explain that the final price may differ after inspection.
+
+Booking statuses:
+- Pending.
+- Confirmed.
+- Completed.
+- Cancelled.
+
+A booking must remain Pending until the professional accepts it.
+
+Prevent selection of unavailable time slots in the demo.
+
+## 12. Customer Dashboard
+
+Create a customer dashboard with:
+- Customer profile.
+- Saved location.
+- Upcoming bookings.
+- Past bookings.
+- Booking status.
+- Professional and service details.
+- Date and time.
+- Estimated price.
+- Previous Work access.
+- Call action when a valid configured phone number exists.
+
+Provide easy access to the AI assistant and search.
+
+## 13. Professional Dashboard
+
+Create a separate professional dashboard.
+
+For the initial demo, provide a demo login or role switcher for Customer and Professional views.
+
+Professionals should be able to:
+- Edit profile information and photo.
+- Select service categories.
+- Set service areas.
+- Add years of experience.
+- Set starting prices.
+- Update availability.
+- Add vehicle types and technology.
+- Select appliance brands they service.
+- Manage portfolio entries.
+- View incoming bookings.
+- Accept or reject booking requests.
+- Update booking statuses.
+- View customer reviews.
+
+Use suitable access controls if real authentication is configured.
+
+## 14. Reviews and Ratings
+
+Display ratings and review counts on professional cards and profiles.
+
+Allow customers to review completed demo bookings.
+
+Prevent duplicate reviews for the same booking.
+
+Clearly distinguish sample demo reviews from genuine verified reviews.
+
+Never fabricate real testimonials, certifications, or verification claims.
+
+## 15. Navigation
+
+Desktop navigation:
+- Home.
+- Search.
+- My Bookings.
+- Profile.
+
+Mobile bottom navigation:
+- Home.
+- Search.
+- My Bookings.
+- Profile.
+
+Do not include Messages in the primary navigation if it is no longer needed.
+
+All navigation items must work. The AI assistant must be accessible from the homepage and search page.
+
+The logo must return the user to the homepage.
+
+## 16. Technical Implementation
+
+Inspect the current project before editing.
+
+- Preserve the existing technology stack wherever practical.
+- Use reusable components.
+- Implement real sorting and filtering.
+- Use structured professional data.
+- Persist bookings and demo profile changes appropriately.
+- Use a suitable database or the existing persistence system.
+- Keep API keys on the server.
+- Validate uploads.
+- Provide loading, success, error, and empty states.
+- Handle AI failures gracefully.
+- Keep the rule-based demo working without an API key.
+- Never invent real professionals or phone numbers.
+- Clearly identify demo data.
+
+If a backend, database, authentication system, or AI service is not configured, implement a functional demo and clearly identify what remains necessary for production use.
+
+## 17. Final Testing
+
+Before finishing, verify that:
+
+1. The exact uploaded Servelink logo is used.
+2. The brand name is spelled Servelink everywhere.
+3. All nine service categories work.
+4. Text-based AI assistance or its clearly labelled demo fallback works.
+5. Photo upload and preview work.
+6. Genuine AI photo analysis is only claimed when configured.
+7. Professional recommendations match the selected problem.
+8. Price sorting works in both directions.
+9. Experience sorting works in both directions.
+10. Rating and distance sorting work.
+11. Mechanics filters work for vehicle types and technologies.
+12. Appliance brand filters work.
+13. Previous Work opens the correct portfolio.
+14. Call uses the configured phone number.
+15. No Message button appears on any professional listing card.
+16. Call and Book Now have matching solid-blue styling.
+17. Booking requests and status updates work.
+18. Customer and professional dashboards work in demo mode.
+19. Mobile and desktop layouts work.
+20. The app runs without major build errors.
+
+Do not stop after writing a plan. Implement the changes, run the website, fix errors, and show the working preview.
+
+**Final product: Servelink — Your Local Service. One Platform.**

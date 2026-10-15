@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Servelink"
+description = "A responsive local service marketplace where customers discover nearby professionals, get guided problem matching, and request bookings, while professionals manage availability and incoming work."
+version = "1.0.0"
+id = "artifacts/servelink"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23741
+
+[services.development]
+run = "pnpm --filter @workspace/servelink run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/servelink", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/servelink/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23741"
+BASE_PATH = "/"

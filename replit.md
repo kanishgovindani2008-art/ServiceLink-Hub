@@ -1,6 +1,6 @@
-# [Project name]
+# Servelink
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Servelink is a local service marketplace demo that helps customers find nearby professionals, describe repair needs, compare sample profiles, and request bookings.
 
 ## Run & Operate
 
@@ -26,15 +26,18 @@ _Populate as you build — short repo map plus pointers to the source-of-truth f
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- This milestone is intentionally a browser-local demo; bookings and profile edits remain in localStorage until shared persistence and account access are configured.
+- Problem matching is keyword-based demo logic. Uploaded photos are displayed for context but are not analyzed.
+- Sample professionals, ratings, and portfolio entries are illustrative, not verified real-world claims.
+- Demo phone numbers are intentionally unset, so calls are unavailable until a professional provides a real number.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Customers can browse nine service categories, search and filter professionals, get rule-based service suggestions, request bookings, and review completed demo bookings. Professionals can edit a sample profile, manage portfolio entries, and update booking statuses.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Do not claim sample profiles, reviews, portfolio work, certifications, phone numbers, or AI photo analysis are real or verified.
 
 ## Gotchas
 
